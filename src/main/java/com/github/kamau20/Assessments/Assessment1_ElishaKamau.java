@@ -8,8 +8,8 @@ public class Assessment1_ElishaKamau {
         // variableOperations(); // Quiz 1
         // gradeCalculator(); // Quiz 2
         // numberSequence(); // Quiz 3
-        inputValidation(); // Quiz 4
-        // patternPrinting(); // Quiz 5
+        // inputValidation(); // Quiz 4
+        patternPrinting(); // Quiz 5
     }
 
     public static void variableOperations() {
@@ -120,5 +120,20 @@ public class Assessment1_ElishaKamau {
         System.out.println("The factorial of " + originalNumber + " is: " + factorial);
 
         scanner.close();
+    }
+
+    public static void patternPrinting() {
+        // Solution for Quiz Pattern Printing
+
+        int rows = 5; // Variable to store the number of rows
+
+        System.out.println("Right-angled triangle pattern:");
+
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 }
