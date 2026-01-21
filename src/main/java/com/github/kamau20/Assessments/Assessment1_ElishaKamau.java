@@ -7,8 +7,8 @@ public class Assessment1_ElishaKamau {
 
         // variableOperations(); // Quiz 1
         // gradeCalculator(); // Quiz 2
-        numberSequence(); // Quiz 3
-        // inputValidation(); // Quiz 4
+        // numberSequence(); // Quiz 3
+        inputValidation(); // Quiz 4
         // patternPrinting(); // Quiz 5
     }
 
@@ -84,5 +84,41 @@ public class Assessment1_ElishaKamau {
             }
             System.out.println();
         }
+    }
+
+    public static void inputValidation() {
+        // Solution for Quiz Input Validation
+
+        Scanner scanner = new Scanner(System.in);
+
+        int number = 0;
+        boolean validInput = false;
+
+        while (!validInput) {
+            System.out.print("Enter a positive integer: ");
+
+            if (scanner.hasNextInt()) {
+                number = scanner.nextInt();
+
+                if (number > 0) {
+                    validInput = true;
+                } else {
+                    System.out.println("Invalid input! Please enter a positive integer:");
+                }
+            } else {
+                System.out.println("Invalid input! Please enter a valid integer");
+            }
+        }
+
+        long factorial = 1; // Calculates the factorial
+        int originalNumber = number;
+
+        while (number > 0) {
+            factorial *= number;
+            number--;
+        }
+        System.out.println("The factorial of " + originalNumber + " is: " + factorial);
+
+        scanner.close();
     }
 }
