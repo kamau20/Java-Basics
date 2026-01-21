@@ -37,7 +37,7 @@ public class Assessment1_ElishaKamau {
         System.out.println("Enter student's score (0-100): "); // Prompts user
         int score = scanner.nextInt();
 
-        String grade; // Variable for storing the grade
+        String grade = ""; // Variable for storing the grade
 
         if (score < 0 || score > 100) {
             System.out.println("Error: Score must be between 0 and 100\n");
@@ -59,5 +59,9 @@ public class Assessment1_ElishaKamau {
         }
 
         scanner.close();
+    }
+
+    public static void numberSequence() {
+        // Solution for Quiz Number Sequence
     }
 }
