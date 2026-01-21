@@ -6,8 +6,8 @@ public class Assessment1_ElishaKamau {
     public static void main(String[] args) {
 
         // variableOperations(); // Quiz 1
-        gradeCalculator(); // Quiz 2
-        // numberSequence(); // Quiz 3
+        // gradeCalculator(); // Quiz 2
+        numberSequence(); // Quiz 3
         // inputValidation(); // Quiz 4
         // patternPrinting(); // Quiz 5
     }
@@ -63,5 +63,26 @@ public class Assessment1_ElishaKamau {
 
     public static void numberSequence() {
         // Solution for Quiz Number Sequence
+
+        for (int i = 1; i <= 20; i++) { // iteration using for loop
+            System.out.print(i + ": "); // prints the current number
+
+            if (i % 5 == 0) { // Checks if number is divisible by 5
+                System.out.print("Multiple of 5");
+            }
+
+            if (i % 2 == 0) { // Checks if number is even or odd
+                if (i % 5 == 0) {
+                    System.out.print(", ");
+                }
+                System.out.print("Even");
+            } else {
+                if (i % 5 == 0) {
+                    System.out.print(", ");
+                }
+                System.out.print("Odd");
+            }
+            System.out.println();
+        }
     }
 }
