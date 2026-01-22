@@ -1,6 +1,6 @@
 package Exercises;
 
-public class Main {
+public class RectangleMain {
     public static void main(String[] args) {
         // Test different constructors
         Rectangle rect1 = new Rectangle(); // 1*1
