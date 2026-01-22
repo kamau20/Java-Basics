@@ -8,6 +8,5 @@ public class EmployeeMain {
         employee1.salary = 50000;
         employee1.calculateBonus(0.05);
         employee1.printInfo();
-
     }
 }
