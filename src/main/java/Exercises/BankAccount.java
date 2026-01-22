@@ -1,3 +1,5 @@
+package Exercises;
+
 public class BankAccount {
     public String accountNumber;
     public String accountHolder;
