@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class Assessment1_ElishaKamau {
     public static void main(String[] args) {
 
-        // variableOperations(); // Quiz 1
+        variableOperations(); // Quiz 1
         // gradeCalculator(); // Quiz 2
         // numberSequence(); // Quiz 3
         // inputValidation(); // Quiz 4
-        patternPrinting(); // Quiz 5
+        // patternPrinting(); // Quiz 5
     }
 
     public static void variableOperations() {
