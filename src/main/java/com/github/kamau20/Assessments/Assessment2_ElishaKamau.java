@@ -6,9 +6,9 @@ public class Assessment2_ElishaKamau {
         // ASSIGNMENT 2.1: OOP CONCEPTS QUIZ
 
         Book {} // Quiz Problem 1 (Class Design & Encapsulation)
-        // Employee {}; // Quiz problem 2 (Inheritance Hierarchy)
-        // Calculator {}; // Quiz Problem 3 (Overloading & Overriding)
-        // BankAccount {}; // Quiz Problem 4 (Bank Account Inheritance)
+        // Employee {} // Quiz problem 2 (Inheritance Hierarchy)
+        // Calculator {} // Quiz Problem 3 (Overloading & Overriding)
+        // BankAccount {} // Quiz Problem 4 (Bank Account Inheritance)
 
         // Quiz Problem 5 (Conceptual Questions)
         // Calculator {} // 1. Difference between Method Overloading & Method Overriding
