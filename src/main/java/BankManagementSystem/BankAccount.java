@@ -29,4 +29,33 @@ public class BankAccount {
     public void checkBalance() {
         System.out.println("Balance is: " + balance);
     }
+
+    @Override
+    public String toString() {
+        return "Account [accountNumber=" + accountNumber + ", accountHolder=" + accountHolder + ", balance=" + balance + "]";
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public String getAccountHolder() {
+        return accountHolder;
+    }
+
+    public void setAccountHolder(String accountHolder) {
+        this.accountHolder = accountHolder;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
 }
