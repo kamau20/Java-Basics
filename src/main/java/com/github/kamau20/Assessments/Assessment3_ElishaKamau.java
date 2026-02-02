@@ -331,5 +331,31 @@ public class Assessment3_ElishaKamau {
         }
 
         // Override returnItem to add Magazine
+        public boolean returnItem() {
+            System.out.println("Returning Magazine...");
+            return super.returnItem();
+        }
+
+        // Override displayDetails
+        @Override
+        public void displayDetails() {
+            System.out.println("Magazine Details....");
+            super.displayDetails();
+            System.out.println("Issue Number: #" + issueNumber);
+            System.out.println("Publication Date: " + publicationDate);
+        }
+
+        // Override toString
+        @Override
+        public String toString() {
+            return "Magazine{" +
+                    "itemId='" + getItemId() + '\'' +
+                    ", title='" + getTitle() + '\'' +
+                    ", author='" + getAuthor() + '\'' +
+                    ", issueNumber=#" + issueNumber +
+                    ", publicationDate='" + publicationDate + '\'' +
+                    ", isAvailable=" + isAvailable() +
+                    '}';
+        }
     }
 }
