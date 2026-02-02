@@ -32,7 +32,8 @@ public class Assessment3_ElishaKamau {
 
     }
 
-    // SOLUTION FOR PROBLEM 1 (LibraryItem)
+    // SOLUTION FOR PROBLEM 1
+    // BASE CLASS: LibraryItem
     public class LibraryItem {
 
         // Encapsulation
@@ -118,6 +119,125 @@ public class Assessment3_ElishaKamau {
             System.out.println("Title: " + title);
             System.out.println("Author: " + author);
             System.out.println("Status: " + isAvailable);
+        }
+
+        // toString Method
+        @Override
+        public String toString() {
+            return "LibraryItem{" +
+                    "itemId='" + itemId + '\'' +
+                    ", title='" + title + '\'' +
+                    ", author='" + author + '\'' +
+                    ", isAvailable=" + isAvailable +
+                    '}';
+        }
+    }
+
+    // CHILD CLASS 1: Book
+    public class Book extends LibraryItem {
+
+        // Additional Properties
+        private String isbn;
+        private String genre;
+
+        // Constructor using super
+        public Book(String itemId, String title, String author, String isbn, String genre) {
+            super(itemId, title, author);
+            setIsbn(isbn);
+            setGenre(genre);
+        }
+
+        // Getters and Setters
+        public String getIsbn() {
+            return isbn;
+        }
+        public void setIsbn(String isbn) {
+            if (isbn == null || !isbn.matches("\\d{13}")) {
+                throw new IllegalArgumentException("ISBN must be 13 digits ");
+            }
+            this.isbn =isbn;
+        }
+        public String getGenre() {
+            return genre;
+        }
+        public void setGenre(String genre) {
+            if (genre == null || genre.trim().isEmpty()) {
+                throw new IllegalArgumentException("Genre cannot be null or empty");
+            }
+            this.genre = genre;
+        }
+
+        // Override checkout to add book logic
+        @Override
+        public boolean checkout() {
+            System.out.println("Checking out Book...");
+            return super.checkout();
+        }
+
+        // Override returnItem to add book logic
+        @Override
+        public boolean returnItem() {
+            System.out.println("Returning Book...");
+            return super.returnItem();
+        }
+
+        // Override displayDetails
+        @Override
+        public void displayDetails() {
+            System.out.println("Book Details");
+            super.displayDetails();
+            System.out.println("ISBN: " + isbn);
+            System.out.println("Genre: " + genre);
+            System.out.println("......");
+        }
+
+        // Override toString
+        @Override
+        public String toString() {
+            return "Book{" +
+                    "itemId='" + getItemId() + '\'' +
+                    ", title='" + getTitle() + '\'' +
+                    ", author='" + getAuthor() + '\'' +
+                    ", isbn='" + isbn + '\'' +
+                    ", genre='" + genre + '\'' +
+                    ", isAvailable=" + isAvailable() +
+                    '}';
+        }
+    }
+
+    // CHILD CLASS 2: DVD
+    public class DVD extends LibraryItem {
+
+        // Additional properties
+        private int duration; // in minutes or hourly
+        private String rating; // e.g. PG, GA
+
+        // Constructor using super
+        public DVD(String itemId, String title, String author, int duration, String rating) {
+            super(itemId, title, author);
+            setDuration(duration);
+            setRating(rating);
+        }
+
+        // Getters and Setters
+        public int getDuration() {
+            return duration;
+        }
+        public void setDuration(int duration) {
+            if (duration <= 0) {
+                throw new IllegalArgumentException("Duration must be positive");
+            }
+            this.duration = duration;
+        }
+
+        public String getRating() {
+            return rating;
+        }
+        public void setRating(String rating) {
+            if (rating == null || rating.trim().isEmpty()) {
+                throw new IllegalArgumentException("Rating cannot be null or empty");
+            }
+            this.rating = rating;
         }
     }
 }
