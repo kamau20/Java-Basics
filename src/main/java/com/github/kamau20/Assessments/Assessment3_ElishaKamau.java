@@ -239,5 +239,97 @@ public class Assessment3_ElishaKamau {
             }
             this.rating = rating;
         }
+
+        // Override checkout to add DDV logic
+        @Override
+        public boolean checkout() {
+            System.out.println("Checking out DVD...");
+            if (super.checkout()) {
+                System.out.println("Runtime: " + duration + " minutes");
+                System.out.println("Rating: " + rating);
+                return true;
+            }
+            return false;
+        }
+
+        // Override returnItem to add DVD logic
+        @Override
+        public boolean returnItem() {
+            System.out.println("Returning DVD...");
+            return super.returnItem();
+        }
+
+        // Override displayDetails
+        @Override
+        public void displayDetails() {
+            System.out.println("DVD Details...");
+            super.displayDetails();
+            System.out.println("Duration: " + duration + " minutes");
+            System.out.println("Rating: " + rating);
+            System.out.println("....");
+        }
+
+        // Override toString
+        @Override
+        public String toString() {
+            return "DVD{" +
+                    "itemId='" + getItemId() + '\'' +
+                    ", title='" + getTitle() + '\'' +
+                    ", author='" + getAuthor() + '\'' +
+                    ", duration=" + duration + " mins" +
+                    ", rating='" + rating + '\'' +
+                    ", isAvailable=" + isAvailable() +
+                    '}';
+        }
+    }
+
+    // CHILD CLASS 3: Magazine
+    public class Magazine extends LibraryItem {
+
+        // Additional Properties
+        private int issueNumber;
+        private String publicationDate;
+
+        // Constructor using super
+        public Magazine(String itemId, String title, String author, int issueNumber, String publicationDate) {
+           super(itemId, title, author);
+           setissueNumber(issueNumber);
+           setPublicationDate(publicationDate);
+        }
+
+        // Getters and Setters
+        public int getIssueNumber() {
+            return issueNumber;
+        }
+        public void setissueNumber(int issueNumber) {
+            if (issueNumber <= 0) {
+                throw new IllegalArgumentException("Issue number must be positive");
+            }
+            this.issueNumber = issueNumber;
+        }
+
+        public String getPublicationDate() {
+            return publicationDate;
+        }
+        public void setPublicationDate(String publicationDate) {
+            if (publicationDate == null || publicationDate.trim().isEmpty()) {
+                throw new IllegalArgumentException("Publication date cannot be null or empty");
+            }
+            this.publicationDate = publicationDate;
+        }
+
+        // Override checkout to add Magazine logic
+        @Override
+        public boolean checkout() {
+            System.out.println("Checking out Magazine...");
+            if (super.checkout()) {
+                System.out.println("Issue: " + issueNumber);
+                System.out.println("Published: " + publicationDate);
+                return true;
+            }
+            return false;
+        }
+
+        // Override returnItem to add Magazine
     }
 }
