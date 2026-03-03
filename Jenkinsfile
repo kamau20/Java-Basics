@@ -6,7 +6,7 @@ pipeline {
     }
 
     tools {
-        maven 'Maven3'   // Make sure Maven3 is configured in Jenkins Global Tools
+        maven 'Maven'   // Make sure Maven3 is configured in Jenkins Global Tools
     }
 
     environment {
