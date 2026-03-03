@@ -5,6 +5,10 @@ pipeline {
         githubPush()
     }
 
+    tools {
+        maven 'Maven3'   // Make sure Maven3 is configured in Jenkins Global Tools
+    }
+
     environment {
         BUILD_DIR = "built"
         REPO_URL = "https://github.com/kamau20/Java-Basics.git"
@@ -22,11 +26,10 @@ pipeline {
             }
         }
 
-        stage('Build with Gradle') {
+        stage('Build with Maven') {
             steps {
                 dir("${PROJECT_DIR}") {
-                    sh 'chmod +x gradlew'
-                    sh './gradlew clean build'
+                    sh 'mvn clean package'
                 }
             }
         }
@@ -35,7 +38,7 @@ pipeline {
             steps {
                 sh '''
                     mkdir -p ${BUILD_DIR}
-                    cp country-name/build/libs/*.jar ${BUILD_DIR}/
+                    cp ${PROJECT_DIR}/target/*.jar ${BUILD_DIR}/
                 '''
             }
         }
