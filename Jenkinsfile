@@ -13,7 +13,6 @@ pipeline {
         BUILD_DIR = "built"
         REPO_URL = "https://github.com/kamau20/Java-Basics.git"
         BRANCH = "main"
-        PROJECT_DIR = "country-name"
     }
 
     stages {
@@ -28,9 +27,7 @@ pipeline {
 
         stage('Build with Maven') {
             steps {
-                dir("${PROJECT_DIR}") {
                     sh 'mvn clean package'
-                }
             }
         }
 
@@ -38,7 +35,7 @@ pipeline {
             steps {
                 sh '''
                     mkdir -p ${BUILD_DIR}
-                    cp ${PROJECT_DIR}/target/*.jar ${BUILD_DIR}/
+                    cp target/*.jar ${BUILD_DIR}/
                 '''
             }
         }
