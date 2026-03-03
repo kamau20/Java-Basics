@@ -17,7 +17,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 git branch: "${BRANCH}",
-                    credentialsId: 'jenkins-github-creds',
+                    credentialsId: 'GitHubToken',
                     url: "${REPO_URL}"
             }
         }
